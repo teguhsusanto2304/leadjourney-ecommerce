@@ -80,3 +80,18 @@ If you discover any security vulnerabilities within LeadJourney, please open an 
 
 📄 License
 The LeadJourney E-commerce platform is open-sourced software licensed under the MIT license.
+
+# Capture
+![Landing Page](capture/landing.png)
+
+![Login Page](capture/login.png)
+
+![Sign Up Page](capture/signup.png)
+
+![Product Page](capture/product.png)
+
+![Cart Page](capture/cart.png)
+
+![Payment Page](capture/payment.png)
+
+![Complete Page](capture/complete.png)
