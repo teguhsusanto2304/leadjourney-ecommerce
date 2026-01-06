@@ -95,3 +95,5 @@ The LeadJourney E-commerce platform is open-sourced software licensed under the 
 ![Payment Page](capture/payment.png)
 
 ![Complete Page](capture/complete.png)
+
+![Notification](capture/notification.png)
