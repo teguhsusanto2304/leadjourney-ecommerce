@@ -11,6 +11,7 @@ use Illuminate\Support\Facades\Cache;
 use App\Models\Order;
 use App\Models\OrderItem;
 use Illuminate\Support\Facades\DB;
+use App\Notifications\OrderCompletedNotification;
 
 class CartController extends Controller
 {
@@ -18,6 +19,8 @@ class CartController extends Controller
     {
         Order::where(['user_id' => auth()->id(),'status' => 'pending'])
                     ->update(['status' => 'completed']);
+
+        auth()->user()->notify(new OrderCompletedNotification());
         
         return Inertia::render('Shipping/OrderComplete', [
             'message' => 'Thank you for your purchase! Your order has been completed successfully.',

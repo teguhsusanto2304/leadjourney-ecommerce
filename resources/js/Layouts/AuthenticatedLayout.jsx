@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import { Link, usePage } from '@inertiajs/react';
+import Notification from '@/Components/Notification';
+import NotificationBell from '@/Components/NotificationBell';
 import { Toaster } from 'react-hot-toast';
 import { 
     LayoutDashboard, 
@@ -92,28 +94,19 @@ export default function AuthenticatedLayout({ children }) {
                         <button className="hidden md:flex items-center justify-center size-10 rounded-full hover:bg-gray-200 dark:hover:bg-[#283930] transition-colors text-[#111814] dark:text-white">
                             <Bell size={20} />
                         </button>
+                        <NotificationBell />
 
                         <div className="size-10 rounded-full bg-cover bg-center ring-2 ring-[#283930] overflow-hidden">
                              <img src={`https://ui-avatars.com/api/?name=${user?.name}`} alt="Profile" />
                         </div>
                     </div>
                 </header>
-
-                <div className="flex-1">
-                    {children}
-                    <Toaster
-                        position="top-right"
-                        reverseOrder={false}
-                        toastOptions={{
-                            // Default options for all toasts
-                            style: {
-                            background: '#facc15', // Tailwind yellow-400 hex
-                            color: '#000',         // black text for contrast
-                            },
-                        }}
-                        />
-
+                <div className="min-h-screen">
+                    <Notification />
+                    <main>{children}</main>
                 </div>
+
+                
             </main>
         </div>
     );
